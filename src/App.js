@@ -1,19 +1,31 @@
 import React from 'react';
 
-function Food({ favorite }) {
+function Food({ name, image }) {
   return (
-      <h3>I Love {favorite}.</h3>
+    <div>
+      <h3>I Love {name}.</h3>
+      <img src={image} alt="image of food" />
+    </div>
   );
 }
+
+const foodILike = [
+  {
+    name : "hamburger",
+    image : "https://rimage.gnst.jp/livejapan.com/public/article/detail/a/00/01/a0001010/img/basic/a0001010_main.jpg?20200317173246&q=80&rw=750&rh=536"
+  },
+  {
+    name : "donggas",
+    image : "https://image-cdn.hypb.st/https%3A%2F%2Fkr.hypebeast.com%2Ffiles%2F2019%2F09%2Ftonkatsu-mania-pork-cutlet-seoul-restaurant-top-1.jpg?q=75&w=800&cbr=1&fit=max"
+  }
+];
+
+const FoodList = foodILike.map(Element => <Food name={Element.name} image={Element.image} />);
 
 function App() {
   return (
     <div>
-      <h1>Hello</h1>
-      <Food favorite="kimchi" />
-      <Food favorite="samgioupsal" />
-      <Food favorite="jjajangmyeon" />
-      <Food favorite="croissant" />
+      {FoodList}
     </div>
   );
 }
