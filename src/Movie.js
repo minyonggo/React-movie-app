@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './Movie.css';
+
 function Moive({ title, year, summary, poster }) {
     
     return (
-        <div>
-            <h2>{title}</h2>
-            <h3>{year}</h3>
-            <p>{summary}</p>
-            <img src={poster} />
+        <div className="movie">
+            <h2 className="movie_title">{title}</h2>
+            <h3 className="movie_year">{year}</h3>
+            <p className="movie_summary">{summary}</p>
+            <img className="movie_poster" src={poster} alt={"poster image of"+title} />
         </div>
     );
 }
